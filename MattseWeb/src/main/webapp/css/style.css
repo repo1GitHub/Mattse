@@ -1,0 +1,55 @@
+/*Ini reseteo universal*/
+* {
+	border: 0; /*especifico que no tenga bordes*/
+	margin:0 0; /*tamaño de margen arriba,abajo y derecha,izquierda*/
+	padding:3px 3px; /*distancia entre el borde y su contenido en general*/
+}
+/*Fin reseteo universal*/
+
+#page {
+	margin:0px 10px;
+	width: 98%;
+	font-size: small;
+}
+
+.header {
+	background: #E2E0C8;
+	color: #000382;
+	width: 99%;
+	border-radius: 0.5em; /*borde curvo*/	
+}
+
+
+.left, .content {
+	display: inline-block; /*disposición en linea y bloque*/   /*IMPORTANTE PARA QUE LOS 2 CONVIVAN A LA MISMA ALTURA*/
+	margin: 3px auto; /*tamaño de margen arriba,abajo:3px y derecha,izquierda:centrados*/
+	min-height: 350px; /*tamaño de altura minimo*/
+	text-align: justify; /*texto justificado*/
+	vertical-align: top; /*alinacion vertical a tope superior*/   /*IMPORTANTE PARA QUE LOS 2 CONVIVAN A LA MISMA ALTURA*/
+	border-radius: 0.5em; /*borde curvo*/
+}
+
+.content {
+	background: #E3E39B;
+	color: #666666;
+	width: 78%;
+}
+
+.left{
+	background: #ECE3BE;
+	color: #B15C2B;
+	width: 20%;
+}
+
+.footer {
+	background: #CDCDCD;
+	color: #999C81;
+	width: 99%;
+	font-size: xx-small;
+	border-radius: 0.5em; /*borde curvo*/
+}
+
+.textomenu {
+	color: #BABA7F;
+	font-size: 1.5em;
+}
