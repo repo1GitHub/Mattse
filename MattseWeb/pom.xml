@@ -4,86 +4,194 @@
   <artifactId>PrimerProyecto</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <name>appmattse Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+	<repositories>
+		<repository>
+			<id>maven2-repository.jboss.com</id>
+			<name>Jboss Repository for Maven</name>
+			<url>http://repository.jboss.com/maven2</url>
+		</repository>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Technology Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
+	
+	<!-- Declaracion de version -->
+	<properties>
+		<spring.version>3.1.2.RELEASE</spring.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- JSF -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.1.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.1.13</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!--<dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> 
+			<version>2.4</version> </dependency> -->
+
+		<!-- PrimeFaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version> 3.4.1</version>
+		</dependency>
+
+		<!-- Spring 3 dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- JSR-330 -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.java-persistence</groupId>
+			<artifactId>jpa-api</artifactId>
+			<version>2.0-cr-1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+		<!-- postgresql Java Connector library -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+		</dependency>
+		
+		<!-- MySQL Java Connector library -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.17</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
+
+		<!-- Log y test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- Mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.4</version>
+		</dependency>
+
+		<dependency>
+  			<groupId>org.slf4j</groupId>
+  			<artifactId>slf4j-log4j12</artifactId>
+  			<version>1.7.5</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.slf4j</groupId>
+  			<artifactId>slf4j-api</artifactId>
+  			<version>1.7.5</version>
+  		</dependency>
+  		
+		<!--<dependency> <groupId>org.apache.tomcat</groupId> <artifactId>tomcat-coyote</artifactId> 
+			<version>7.0.47</version> <scope>provided</scope> </dependency> -->
+	</dependencies>
   
-  <dependencies>
-  	<dependency>
-  		<groupId>com.sun.faces</groupId>
-  		<artifactId>jsf-api</artifactId>
-  		<version>2.1.13</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.sun.faces</groupId>
-  		<artifactId>jsf-impl</artifactId>
-  		<version>2.1.13</version>
-  	</dependency>  	
-  	<dependency>
-  		<groupId>javax.servlet</groupId>
-  		<artifactId>jstl</artifactId>
-  		<version>1.2</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>javax.servlet</groupId>
-  		<artifactId>servlet-api</artifactId>
-  		<version>2.4</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.primefaces</groupId>
-  		<artifactId>primefaces</artifactId>
-  		<version>3.4.1</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>junit</groupId>
-  		<artifactId>junit</artifactId>
-  		<version>4.7</version>
-  		<scope>test</scope>
-  	</dependency>
-  	  	<dependency>
-  		<groupId>log4j</groupId>
-  		<artifactId>log4j</artifactId>
-  		<version>1.2.17</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.apache.tomcat</groupId>
-  		<artifactId>tomcat-coyote</artifactId>
-  		<version>7.0.47</version>
-  		<!-- provided no empaqueta la libreria utilizará una provista por el contenedor -->
-  		<scope>provided</scope>
-  	</dependency>
-  </dependencies>
-  
-  <repositories>
-      <repository>
-             <id>maven2-repository.jboss.com</id>
-             <name>Jboss Repository for Maven</name>
-             <url>http://repository.jboss.com/maven2</url>
-      </repository>
-      <repository>
-             <id>prime-repo</id>
-             <name>Prime Technology Maven Repository</name>
-             <url>http://repository.primefaces.org</url>
-             <layout>default</layout>
-      </repository>
-      <repository>
-             <id>maven2-repository.dev.java.net</id>
-             <name>Java.net Repository for Maven</name>
-             <url>http://download.java.net/maven/2/</url>
-             <layout>default</layout>
-      </repository>
-</repositories>
- 
-<build>
-   <finalName>PrimeProject</finalName>
-   <plugins>
-      <plugin>
-             <groupId>org.apache.maven.plugins</groupId>
-             <artifactId>maven-compiler-plugin</artifactId>
-             <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
-             </configuration>
-      </plugin>
-   </plugins>
-</build>  
-  
+	<build>
+	   <finalName>PrimeProject</finalName>
+	   <plugins>
+	      <plugin>
+	             <groupId>org.apache.maven.plugins</groupId>
+	             <artifactId>maven-compiler-plugin</artifactId>
+	             <configuration>
+	                    <source>1.5</source>
+	                    <target>1.5</target>
+	             </configuration>
+	      </plugin>
+	   </plugins>
+	</build>  
 </project>
 
