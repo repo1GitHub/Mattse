@@ -1,4 +1,4 @@
-package com.mattse.landa.cotizaciones.service;
+package com.mattse.landa.cotizaciones.negocio.service;
 
 import java.util.List;
 

@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mattse.landa.cotizaciones.model.Cotizacion;
-import com.mattse.landa.cotizaciones.service.ICotizacionService;
+import com.mattse.landa.cotizaciones.negocio.service.ICotizacionService;
 
 
 

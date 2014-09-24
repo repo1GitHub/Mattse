@@ -1,11 +1,11 @@
-package com.mattse.landa.cotizaciones.service.impl;
+package com.mattse.landa.cotizaciones.negocio.service.impl;
 
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mattse.landa.cotizaciones.model.Cotizacion;
-import com.mattse.landa.cotizaciones.service.ICotizacionService;
+import com.mattse.landa.cotizaciones.negocio.service.ICotizacionService;
 import com.mattse.landa.cotizaciones.dao.ICotizacionDao;
 
 @Transactional(readOnly = true)
