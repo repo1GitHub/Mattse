@@ -9,7 +9,7 @@ public class ProductoDaoImpl implements IProductoDAO{
 
 	@Override
 	public List<Producto> buscarProducto() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
