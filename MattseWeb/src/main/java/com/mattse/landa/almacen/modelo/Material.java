@@ -21,7 +21,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name="MATERIAL")
-public class Material {
+public class Material implements java.io.Serializable{
 
 	private int codigoMatrial;
 	private String nombreMatrial;

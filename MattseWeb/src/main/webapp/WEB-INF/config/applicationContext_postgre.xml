@@ -10,17 +10,27 @@
 		        http://www.springframework.org/schema/context 
 		        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
+ 	
+ 	 <!-- Habilita el uso de anotaciones -->
+ 	<context:annotation-config />
  	<!-- Beans Declaration -->
 	<bean id="Cotizacion" class="com.mattse.landa.cotizaciones.model.Cotizacion"/>
 
 	
 	<!-- User Service Declaration -->
-	<bean id="CotizacionService" class="com.mattse.landa.cotizaciones.service.impl.CotizacionServiceImpl">
+	<bean id="CotizacionService" class="com.mattse.landa.cotizaciones.negocio.service.impl.CotizacionServiceImpl">
 		<property name="cotizacionDAO" ref="CotizacionDaoImpl" />
 	</bean>
 	<!-- User DAO Declaration -->
 	<bean id="CotizacionDaoImpl" class="com.mattse.landa.cotizaciones.dao.impl.CotizacionDaoImpl">
 		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+	
+	<bean id="materialServiceImpl" class="com.mattse.landa.almacen.negocio.service.impl.MaterialServiceImpl" >
+		<property name="materialdao" ref="materialdaoImpl" />
+	</bean>
+	<bean id="materialdaoImpl" class="com.mattse.landa.almacen.dao.impl.MaterialDaoImpl" >
+		<constructor-arg ref="SessionFactory"/>
 	</bean>
 	
 	<!-- Data Source Declaration -->
