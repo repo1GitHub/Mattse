@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/template/template.xhtml">
+    <ui:define name="metadata">
+    </ui:define>
+    <ui:define name="content">
+		<h:form>
+			<table>
+				<tr>
+					<td><h:outputLabel for="name" value="Name : " /></td>
+					<td><p:inputText id="name" value="#{materialUI.nombre}">
+							<f:validateLength minimum="5" />
+							<p:ajax event="blur" update="nameMsg" />
+						</p:inputText> <p:message id="nameMsg" for="name" display="icon" /></td>
+				</tr>
+				<tr>
+					<td><p:commandButton id="addUser" value="Add"
+							action="#{materialUI.addMaterial}" ajax="false" /></td>
+					<td><p:commandButton id="reset" value="Reset"
+							action="#{materialUI.reset}" ajax="false" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
