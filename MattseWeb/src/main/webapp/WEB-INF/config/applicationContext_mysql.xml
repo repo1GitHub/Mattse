@@ -15,13 +15,21 @@
 
 	
 	<!-- User Service Declaration -->
-	<bean id="CotizacionService" class="com.mattse.landa.cotizaciones.service.impl.CotizacionServiceImpl">
+	<bean id="CotizacionService" class="com.mattse.landa.cotizaciones.negocio.service.impl.CotizacionServiceImpl">
 		<property name="cotizacionDAO" ref="CotizacionDaoImpl" />
 	</bean>
+	
+	<!-- <bean id="IMaterialService" class="com.mattse.landa.almacen.negocio.service.impl.MaterialServiceImpl">
+		<property name="materialdao" ref="materialDaoImpl" />
+	</bean> -->
 	<!-- User DAO Declaration -->
 	<bean id="CotizacionDaoImpl" class="com.mattse.landa.cotizaciones.dao.impl.CotizacionDaoImpl">
-		<property name="sessionFactory" ref="SessionFactory" />
+		<property name="sessionFactory" ref="SessionFactory" /> 
 	</bean>
+
+	<!--  <bean id="materialDaoImpl" class="com.mattse.landa.almacen.dao.impl.MaterialDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean> -->
 	
 	<!-- Data Source Declaration -->
 	<bean id="DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
@@ -46,7 +54,7 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<!--  <prop key="hibernate.hbm2ddl.auto">create</prop>-->
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>

@@ -21,7 +21,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name="COTIZACION")
-public class Cotizacion {
+public class Cotizacion implements java.io.Serializable{
 
 	private int id;
 	private String name;

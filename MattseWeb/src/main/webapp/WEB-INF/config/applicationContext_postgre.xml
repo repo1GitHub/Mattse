@@ -30,9 +30,58 @@
 		<property name="materialdao" ref="materialdaoImpl" />
 	</bean>
 	<bean id="materialdaoImpl" class="com.mattse.landa.almacen.dao.impl.MaterialDaoImpl" >
-		<constructor-arg ref="SessionFactory"/>
+		 <!--  <constructor-arg ref="sessionFactory"/> -->
 	</bean>
 	
+
+	
+
+	<!-- Session Factory HibernateDaoSupport -->
+	<!-- inicio -->
+<!--  	<bean id="SessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="packagesToScan"
+			value="com.mattse.landa.almacen.modelo.Material" />
+	</bean>
+	<bean id="dataSource"
+         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/test" />
+        <property name="username" value="postgres" />
+        <property name="password" value="postgres" />
+    </bean>-->
+    <!-- fin -->
+    
+    
+	<!-- Session Factory Declaration -->
+	<!-- inicio -->
+  	<bean id="SessionFactory" 
+  	  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="DataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.mattse.landa.cotizaciones.model.Cotizacion</value>
+				<value>com.mattse.landa.almacen.modelo.Material</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
 	<!-- Data Source Declaration -->
 	<bean id="DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 	<!-- <bean id="DataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">-->
@@ -44,25 +93,8 @@
 		<property name="maxStatements" value="30" />
 		<property name="minPoolSize" value="5" /> 
 	</bean>
-	
-	
-	<!-- Session Factory Declaration -->
-	<bean id="SessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="DataSource" />
-		<property name="annotatedClasses">
-			<list>
-				<value>com.mattse.landa.cotizaciones.model.Cotizacion</value>
-			</list>
-		</property>
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
-				<prop key="hibernate.show_sql">true</prop>
-			</props>
-		</property>
-	</bean>
-	
+	<!-- fin -->
+
 	<!-- Enable the configuration of transactional behavior based on annotations -->
     <tx:annotation-driven transaction-manager="txManager"/>
 

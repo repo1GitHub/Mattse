@@ -12,16 +12,15 @@
 			<table>
 				<tr>
 					<td><h:outputLabel for="name" value="Name : " /></td>
-					<td><p:inputText id="name" value="#{materialUI.nombre}">
+					<td><p:inputText id="name" value="#{almacenMB.nombre}">
 							<f:validateLength minimum="5" />
 							<p:ajax event="blur" update="nameMsg" />
 						</p:inputText> <p:message id="nameMsg" for="name" display="icon" /></td>
 				</tr>
 				<tr>
 					<td><p:commandButton id="addUser" value="Add"
-							action="#{materialUI.addMaterial}" ajax="false" /></td>
-					<td><p:commandButton id="reset" value="Reset"
-							action="#{materialUI.reset}" ajax="false" /></td>
+							action="#{almacenMB.procesaDatos}" ajax="false" /></td>
+					<td></td>
 				</tr>
 			</table>
 		</h:form>
